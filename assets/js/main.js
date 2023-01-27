@@ -8,7 +8,7 @@
 		$sidebar = $('#sidebar'),
 		$main = $('#main');
 
-	// Breakpoints.
+	// breakpoints.
 		breakpoints({
 			xlarge:   [ '1281px',  '1680px' ],
 			large:    [ '981px',   '1280px' ],
@@ -17,14 +17,14 @@
 			xsmall:   [ null,      '480px'  ]
 		});
 
-	// Play initial animations on page load.
+	// window animations
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
 		});
 
-	// Menu.
+	// menu.
 		$menu
 			.appendTo($body)
 			.panel({
@@ -38,30 +38,30 @@
 				visibleClass: 'is-menu-visible'
 			});
 
-	// Search (header).
-		var $search = $('#search'),
-			$search_input = $search.find('input');
+	// // Search (header).
+	// 	var $search = $('#search'),
+	// 		$search_input = $search.find('input');
 
-		$body
-			.on('click', '[href="#search"]', function(event) {
+	// 	$body
+	// 		.on('click', '[href="#search"]', function(event) {
 
-				event.preventDefault();
+	// 			event.preventDefault();
 
-				// Not visible?
-					if (!$search.hasClass('visible')) {
+	// 			// Not visible?
+	// 				if (!$search.hasClass('visible')) {
 
-						// Reset form.
-							$search[0].reset();
+	// 					// Reset form.
+	// 						$search[0].reset();
 
-						// Show.
-							$search.addClass('visible');
+	// 					// Show.
+	// 						$search.addClass('visible');
 
-						// Focus input.
-							$search_input.focus();
+	// 					// Focus input.
+	// 						$search_input.focus();
 
-					}
+	// 				}
 
-			});
+	// 		});
 
 		$search_input
 			.on('keydown', function(event) {
